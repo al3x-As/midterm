@@ -1,0 +1,111 @@
+/* Base Navbar Layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem 2rem;
+  color: white;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #00bcd4;
+}
+
+.nav-links a.active {
+  background-color: #00bcd4;
+  color: white;
+  font-weight: bold;
+}
+
+/* Hamburger Button (Hidden on Desktop) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* --- Mobile Responsiveness (Screens under 768px) --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* Show hamburger button on mobile */
+  }
+
+  .nav-links {
+    display: none; /* Hide default horizontal links */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 30%;
+    background-color: #333;
+    padding: 1rem 0;
+    gap: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  /* When JS toggles 'active' class on menu */
+  .nav-links.active {
+    display: flex;
+    
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.8rem 0;
+    border-radius: 0;
+  }
+
+  /* Optional: Turn hamburger icon into an 'X' when open */
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}
