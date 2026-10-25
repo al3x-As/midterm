@@ -1,111 +1,226 @@
-/* Base Navbar Layout */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 1rem 2rem;
-  color: white;
-  position: relative;
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #b49797;
+    color: #080808;
 }
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    min-height: 80px;
+    padding: 0 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #c96a6a;
+    border-bottom: 1px solid rgba(248, 247, 245, 0.3);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+    color: #0a0a0a;
+}
+
+.logo-icon {
+    font-size: 27px;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.gold {
+    color: #d4af37;
+}
+
+/* NAVIGATION LINKS */
 
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    list-style: none;
 }
 
 .nav-links a {
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+    display: inline-block;
+    padding: 10px 0;
+
+    color: #d0d0d0;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: color 0.3s ease;
+    position: relative;
 }
 
-.nav-links a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #00bcd4;
-}
+/* GOLD UNDERLINE */
 
-.nav-links a.active {
-  background-color: #00bcd4;
-  color: white;
-  font-weight: bold;
-}
+.nav-links a::after {
+    content: "";
 
-/* Hamburger Button (Hidden on Desktop) */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 21px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-.menu-toggle .bar {
-  height: 3px;
-  width: 100%;
-  background-color: white;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* --- Mobile Responsiveness (Screens under 768px) --- */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex; /* Show hamburger button on mobile */
-  }
-
-  .nav-links {
-    display: none; /* Hide default horizontal links */
-    flex-direction: column;
     position: absolute;
-    top: 100%;
-    right: 0;
-    width: 30%;
-    background-color: #333;
-    padding: 1rem 0;
-    gap: 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
+    left: 0;
+    bottom: 3px;
 
-  /* When JS toggles 'active' class on menu */
-  .nav-links.active {
-    display: flex;
-    
-  }
+    width: 0;
+    height: 2px;
 
-  .nav-links li {
+    background-color: #d4af37;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #d4af37;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
-    text-align: center;
-  }
+}
 
-  .nav-links a {
+/* BOOK BUTTON */
+
+.nav-links a[data-page="book.html"] {
+    padding: 12px 22px;
+
+    background-color: #d4af37;
+    color: #151515;
+
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.nav-links a[data-page="book.html"]::after {
+    display: none;
+}
+
+.nav-links a[data-page="book.html"]:hover {
+    background-color: #f0ce55;
+    color: #151515;
+}
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-toggle {
+    display: none;
+
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 30px;
+    height: 22px;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
     display: block;
-    padding: 0.8rem 0;
-    border-radius: 0;
-  }
 
-  /* Optional: Turn hamburger icon into an 'X' when open */
-  .menu-toggle.active .bar:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-  }
-  .menu-toggle.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .menu-toggle.active .bar:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-  }
+    width: 100%;
+    height: 3px;
+
+    background-color: #d4af37;
+    border-radius: 3px;
+
+    transition: 0.3s ease;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        min-height: 70px;
+        padding: 0 5%;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+        padding: 20px 5% 25px;
+
+        background-color: #151515;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px 0;
+    }
+
+    .nav-links a[data-page="book.html"] {
+        display: inline-block;
+        width: fit-content;
+        padding: 12px 22px;
+        margin-top: 5px;
+    }
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
 }

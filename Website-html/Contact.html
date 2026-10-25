@@ -2,18 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
-  <link rel="stylesheet" href="../Website - css/navbar.css">
-  <script src="../Website - js/navbar.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Escape Room</title>
+  <link rel="stylesheet" href="../Website - css/contact.css">
+  <!-- FontAwesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Custom Element Tag -->
-  <my-navbar></my-navbar>
+  <main class="contact-container">
+    <h1>Get in Touch</h1>
+    <p class="subtitle">Have a question or want to book a special event? Send us a message!</p>
 
-  <main>
-    <h1>Page Content</h1>
+    <div class="contact-grid">
+      <!-- Contact Form -->
+      <section class="form-card">
+        <form id="contactForm" >
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+            <span class="error-msg" id="nameError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            <span class="error-msg" id="emailError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <input type="text" id="subject" name="subject" placeholder="What is this regarding?" required>
+            <span class="error-msg" id="subjectError"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+            <span class="error-msg" id="messageError"></span>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </section>
+
+      <!-- Map & Details Side Panel -->
+      <section class="info-card">
+        <h2>Find Us</h2>
+        
+        <!-- Embedded Google Map -->
+        <div class="map-wrapper">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12570.539284407902!2d23.714064242196812!3d38.03229205694985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a30023cb7929%3A0x5b04f389a30f4852!2sMad%20of%20Escape!5e0!3m2!1sel!2sgr!4v1792943186909!5m2!1sel!2sgr"
+            width="100%" 
+            height="220" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <div class="contact-details">
+          <p><i class="fa-solid fa-location-dot"></i> Ηρ. Πολυτεχνείου 14, Άγιοι Ανάργυροι 135 61</p>
+          <p><i class="fa-solid fa-envelope"></i> info@escaperoom.com</p>
+          <p><i class="fa-solid fa-phone"></i> +30 210 1234567</p>
+        </div>
+
+        <div class="social-links">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
 
+  <!-- Confirmation Popup Modal -->
+  <div id="confirmationModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <div class="modal-header">
+        <i class="fa-regular fa-circle-check"></i>
+        <h2>Message Received!</h2>
+      </div>
+      <p>Thank you for reaching out. Here are the details of your submission:</p>
+      
+      <div class="modal-details">
+        <p><strong>Name:</strong> <span id="confirmName"></span></p>
+        <p><strong>Email:</strong> <span id="confirmEmail"></span></p>
+        <p><strong>Subject:</strong> <span id="confirmSubject"></span></p>
+        <p><strong>Message:</strong> <span id="confirmMessage"></span></p>
+      </div>
+
+      <button id="modalCloseBtn" class="modal-btn">Close</button>
+    </div>
+  </div>
+
+  <script src="../Website - js/contact.js"></script>
 </body>
 </html>
