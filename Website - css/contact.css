@@ -8,12 +8,13 @@
 body {
   background-color: #EAECEE;
   color: #2B2D42;
-  padding: 40px 20px;
+  
 }
 
 .contact-container {
   max-width: 1000px;
   margin: 0 auto;
+  padding: 40px;
 }
 
 h1 {
