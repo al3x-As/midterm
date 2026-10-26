@@ -1,31 +1,50 @@
-<nav class="navbar-container">
-    <a href="../Website-html/Home.html" class="navbar-logo">
-        <span class="logo-icon">🔐</span>
-        <span class="logo-text">ESCAPE<span class="gold">ROOM</span></span>
-    </a>
+<!DOCTYPE html>
+<html lang="en">
 
-    <button class="menu-toggle"
-            id="menu-toggle"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-            aria-controls="nav-links">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+<head>
+    <meta charset="UTF-8">
 
-    <ul class="nav-links" id="nav-links">
-        <li>
-            <a href="../Website-html/Home.html" data-page=" Home.html">Home</a>
-        </li>
-        <li>
-            <a href="../Website-html/About.html" data-page="about.html">About</a>
-        </li>
-        <li>
-            <a href="../Website-html/Book.html" data-page="book.html">Book</a>
-        </li>
-        <li>
-            <a href="../Website-html/Contact.html" data-page="contact.html">Contact</a>
-        </li>
-    </ul>
-</nav>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Escape Room | Home</title>
+
+    <link rel="stylesheet" href="../Website - css/navbar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    
+</head>
+
+    <body>
+
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="../Website-html/Home.html" class="navbar-logo">
+                    <i class="bi bi-file-lock"></i> LockBox
+                </a>
+
+                <button class="navbar-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <ul class="navbar-menu">
+                    <li> <a href="../Website-html/Home.html" data-page=" Home.html" class="active">Home</a> </li>
+                    <li> <a href="../Website-html/About.html" data-page="about.html">About</a> </li>
+                    <li> <a href="../Website-html/Book.html" data-page="book.html">Book</a> </li>
+                    <li> <a href="../Website-html/Contact.html" data-page="contact.html">Contact</a> </li>
+                    <li> <div class="dark-lightmode">
+                        <i class="bi bi-moon-fill moon"></i>
+                        <i class="bi bi-sun sun"></i> </div>
+                    </li>
+                </ul>
+
+            </div>
+
+    
+        </nav>
+
+        <script src="../Website - js/navbar.js"></script>
+    </body>
+</html>

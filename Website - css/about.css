@@ -17,7 +17,12 @@ body {
     margin-top: 40px;
 }
 
-.card {
+.swiper {
+  width: 600px;
+  height: 300px;
+}
+
+.card{
     width: 400px;
     background-color: #2B2D42;
     border-radius: 8px;

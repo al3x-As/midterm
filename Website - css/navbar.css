@@ -1,226 +1,183 @@
-/* =========================
-   GLOBAL STYLES
-========================= */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #b49797;
-    color: #080808;
+    min-height: 100vh;
+    background-color: #EAECEE;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+body.dark {
+    background-color: #2B2D42;
+    color: #EAECEE;
+    
+
+}
+
 
 .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
     width: 100%;
-    min-height: 80px;
-    padding: 0 8%;
+    position: sticky;
+    top: 0;
+    background-color: #2B2D42;
+    box-shadow: 0 10px 20px #000000;
+    z-index: 999;
+}
 
+.navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    background-color: #c96a6a;
-    border-bottom: 1px solid rgba(248, 247, 245, 0.3);
-
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    width: 100%;
+    min-height: 80px;
+    padding: 0 8%;
+    
 }
-
-/* LOGO */
 
 .navbar-logo {
     display: flex;
     align-items: center;
     gap: 10px;
-
     text-decoration: none;
-    color: #0a0a0a;
-}
-
-.logo-icon {
-    font-size: 27px;
-}
-
-.logo-text {
+    color: white;
     font-size: 22px;
     font-weight: 800;
-    letter-spacing: 2px;
 }
 
-.gold {
-    color: #d4af37;
-}
-
-/* NAVIGATION LINKS */
-
-.nav-links {
+.navbar-menu {
     display: flex;
     align-items: center;
-    gap: 35px;
-
+    gap: 1.5rem;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-links a {
-    display: inline-block;
-    padding: 10px 0;
-
-    color: #d0d0d0;
-    text-decoration: none;
-
-    font-size: 15px;
-    font-weight: 500;
-
-    transition: color 0.3s ease;
+.navbar-menu li a {
     position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 20px; 
 }
 
-/* GOLD UNDERLINE */
-
-.nav-links a::after {
-    content: "";
-
+.navbar-menu li a::before {
+    content: '';
     position: absolute;
-    left: 0;
-    bottom: 3px;
-
-    width: 0;
-    height: 2px;
-
-    background-color: #d4af37;
-    transition: width 0.3s ease;
+    bottom: 0;                   
+    left: 50%;                
+    transform: translateX(-50%); 
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0;
+    transition: all 0.3 ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #d4af37;
+.navbar-menu li:hover a::before{
+    opacity: 1;
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
+
+.dark-lightmode {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* BOOK BUTTON */
-
-.nav-links a[data-page="book.html"] {
-    padding: 12px 22px;
-
-    background-color: #d4af37;
-    color: #151515;
-
-    border-radius: 4px;
-    font-weight: 700;
+.dark-lightmode i {
+    position: absolute;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.nav-links a[data-page="book.html"]::after {
+.navbar-toggle {
     display: none;
-}
-
-.nav-links a[data-page="book.html"]:hover {
-    background-color: #f0ce55;
-    color: #151515;
-}
-
-/* =========================
-   MOBILE MENU BUTTON
-========================= */
-
-.menu-toggle {
-    display: none;
-
-    flex-direction: column;
-    justify-content: space-between;
-
-    width: 30px;
-    height: 22px;
-
-    background: none;
+    padding: 10px;
     border: none;
     cursor: pointer;
 }
 
-.menu-toggle span {
+.bar {
     display: block;
-
-    width: 100%;
+    width: 25px;
     height: 3px;
-
-    background-color: #d4af37;
-    border-radius: 3px;
-
-    transition: 0.3s ease;
+    margin: 5px auto;
+    background: white;
+    transition: all 0.3s ease-in-out;
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
-
-@media (max-width: 768px) {
-
-    .navbar {
-        min-height: 70px;
-        padding: 0 5%;
+@media (max-width: 880px) {
+    .navbar-container {
+        padding-right: 20px; 
     }
 
-    .logo-text {
-        font-size: 18px;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    .nav-links {
+    .navbar-container .navbar-menu {
         display: none;
-
+        background-color: #2B2D42;
         flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
-
+        align-items: flex-start;
+        gap: 1.7rem;
         position: absolute;
-        top: 100%;
-        left: 0;
-
-        width: 100%;
-        padding: 20px 5% 25px;
-
-        background-color: #151515;
-        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        
+        height: 40vh;
+        width: 250px;
+        top: 0;
+        right: 0;
+        padding: 5rem 1.5rem;
+        box-shadow: 0 10px 10px black;
+        
     }
 
-    .nav-links.open {
+    .navbar-container .navbar-menu.active {
         display: flex;
     }
 
-    .nav-links a {
+    .navbar-toggle {
+        background-color: #2B2D42;
         display: block;
-        padding: 12px 0;
+        
+        z-index: 999;
     }
 
-    .nav-links a[data-page="book.html"] {
-        display: inline-block;
-        width: fit-content;
-        padding: 12px 22px;
-        margin-top: 5px;
+    .navbar-toggle.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
 
-/* REDUCED MOTION ACCESSIBILITY */
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 0 1rem;
+    }
 
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        transition-duration: 0.01ms !important;
+    .navbar-logo {
+        font-size: 1.7rem;
+    }
+
+    .navbar-container .navbar-menu li a {
+        font-size: 1.2rem;
+        padding: 3px 15px;
     }
 }
