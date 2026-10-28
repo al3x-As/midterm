@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LockBox | Book Your Room</title>
+  
   <link rel="stylesheet" href="../Website - css/navbar.css">
   <link rel="stylesheet" href="../Website - css/book.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -13,101 +13,199 @@
   <!-- NAVBAR CONTAINER -->
   <div id="navbar"></div>
 
-  <!-- BOOKING SECTION -->
-  <section class="booking-section">
-    <h1>Book Your Adventure</h1>
-    <p class="subtitle">Select your room, choose a date & time, and prepare to escape!</p>
+  <main class="booking-page-container">
+    
+    <!-- HEADER -->
+    <div class="page-header">
+      <h1>Our Escape Rooms</h1>
+      <p>Click on any room card below to choose your adventure and start booking!</p>
+    </div>
 
-    <form id="bookingForm" class="booking-form">
+    <!-- ROOM CARDS SHOWCASE -->
+    <section class="rooms-grid">
       
-      <!-- STEP 1: CHOOSE A ROOM -->
-      <div class="form-group">
-        <label for="roomSelect"><i class="bi bi-door-open"></i> Select Room</label>
-        <select id="roomSelect" required>
-          <option value="" disabled selected>Choose an escape room...</option>
-          <option value="The Haunted Laboratory">The Haunted Laboratory (Difficulty: 4/5)</option>
-          <option value="Ancient Tomb Mystery">Ancient Tomb Mystery (Difficulty: 3/5)</option>
-          <option value="Bank Heist Mission">Bank Heist Mission (Difficulty: 5/5)</option>
-        </select>
-      </div>
-
-      <!-- STEP 2: DATE & TIME -->
-      <div class="form-row">
-        <div class="form-group">
-          <label for="bookingDate"><i class="bi bi-calendar-event"></i> Date</label>
-          <input type="date" id="bookingDate" required>
+      <!-- ROOM 1 -->
+      <div class="room-card" data-room="The Haunted Laboratory" onclick="chooseRoom('The Haunted Laboratory')">
+        <div class="room-image-wrapper">
+          <img src="../photo/Gemini_Generated_Image_svjcspsvjcspsvjc.jpeg" alt="The Haunted Laboratory" >
+          <span class="difficulty-badge"><i class="bi bi-star-fill"></i> Difficulty: 4/5</span>
         </div>
-
-        <div class="form-group">
-          <label for="timeSlot"><i class="bi bi-clock"></i> Time Slot</label>
-          <select id="timeSlot" required>
-            <option value="" disabled selected>Select time...</option>
-            <option value="12:00 PM">12:00 PM</option>
-            <option value="02:00 PM">02:00 PM</option>
-            <option value="04:00 PM">04:00 PM</option>
-            <option value="06:00 PM">06:00 PM</option>
-            <option value="08:00 PM">08:00 PM</option>
-            <option value="10:00 PM">10:00 PM</option>
-          </select>
+        <div class="room-details">
+          <h3>The Haunted Laboratory</h3>
+          <p class="room-info"><i class="bi bi-people-fill"></i> 2 - 6 Players | <i class="bi bi-clock-fill"></i> 60 Minutes</p>
+          <p class="room-desc">A top-secret experiment went terribly wrong...</p>
+          
+          <div class="card-buttons">
+            <button class="read-more-btn" type="button" onclick="event.stopPropagation(); openRoomDetails('The Haunted Laboratory')">Read More</button>
+            <button class="select-room-btn" type="button">Select Room</button>
+          </div>
         </div>
       </div>
 
-      <!-- STEP 3: PLAYERS -->
-      <div class="form-row">
-        <div class="form-group">
-          <label for="playerCount"><i class="bi bi-people"></i> Players</label>
-          <select id="playerCount" required>
-            <option value="2">2 Players (€20/person)</option>
-            <option value="3">3 Players (€18/person)</option>
-            <option value="4" selected>4 Players (€16/person)</option>
-            <option value="5">5 Players (€15/person)</option>
-            <option value="6">6 Players (€14/person)</option>
-          </select>
+      <!-- ROOM 2 -->
+      <div class="room-card" data-room="Ancient Tomb Mystery" onclick="chooseRoom('Ancient Tomb Mystery')">
+        <div class="room-image-wrapper">
+          <img src="../photo/Gemini_Generated_Image_kpn409kpn409kpn4.jpeg" alt="Ancient Tomb Mystery" >
+          <span class="difficulty-badge"><i class="bi bi-star-fill"></i> Difficulty: 3/5</span>
         </div>
-
-        <div class="form-group price-display">
-          <label>Total Price</label>
-          <div class="total-price" id="totalPrice">€64</div>
-        </div>
-      </div>
-
-      <hr class="form-divider">
-
-      <!-- STEP 4: CONTACT INFO -->
-      <div class="form-group">
-        <label for="fullName"><i class="bi bi-person"></i> Full Name</label>
-        <input type="text" id="fullName" placeholder="e.g. Alex Smith" required>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="email"><i class="bi bi-envelope"></i> Email Address</label>
-          <input type="email" id="email" placeholder="alex@example.com" required>
-        </div>
-
-        <div class="form-group">
-          <label for="phone"><i class="bi bi-telephone"></i> Phone Number</label>
-          <input type="tel" id="phone" placeholder="+30 6912 345 678" required>
+        <div class="room-details">
+          <h3>Ancient Tomb Mystery</h3>
+          <p class="room-info"><i class="bi bi-people-fill"></i> 2 - 6 Players | <i class="bi bi-clock-fill"></i> 60 Minutes</p>
+          <p class="room-desc">Trapped inside a forgotten pharaoh's tomb...</p>
+          
+          <div class="card-buttons">
+            <button class="read-more-btn" type="button" onclick="event.stopPropagation(); openRoomDetails('Ancient Tomb Mystery')">Read More</button>
+            <button class="select-room-btn" type="button">Select Room</button>
+          </div>
         </div>
       </div>
 
-      <button type="submit" class="book-submit-btn">Confirm Reservation</button>
-    </form>
+      <!-- ROOM 3 -->
+      <div class="room-card" data-room="Bank Heist Mission" onclick="chooseRoom('Bank Heist Mission')">
+        <div class="room-image-wrapper">
+          <img src="../photo/Gemini_Generated_Image_xitpgxxitpgxxitp.jpeg" alt="Bank Heist Mission" >
+          <span class="difficulty-badge"><i class="bi bi-star-fill"></i> Difficulty: 5/5</span>
+        </div>
+        <div class="room-details">
+          <h3>Bank Heist Mission</h3>
+          <p class="room-info"><i class="bi bi-people-fill"></i> 2 - 6 Players | <i class="bi bi-clock-fill"></i> 60 Minutes</p>
+          <p class="room-desc">Crack the vault codes and bypass laser security systems...</p>
+          
+          <div class="card-buttons">
+            <button class="read-more-btn" type="button" onclick="event.stopPropagation(); openRoomDetails('Bank Heist Mission')">Read More</button>
+            <button class="select-room-btn" type="button">Select Room</button>
+          </div>
+        </div>
+      </div>
 
-    <!-- SUCCESS MESSAGE POPUP -->
-    <div id="successModal" class="modal">
-      <div class="modal-content">
-        <i class="bi bi-check-circle-fill success-icon"></i>
-        <h2>Booking Confirmed!</h2>
-        <p id="modalDetails">Thank you! Your reservation details have been sent to your email.</p>
-        <button onclick="closeModal()" class="close-modal-btn">Done</button>
+    </section>
+
+    <!-- STEP CARDS BOOKING SECTION -->
+    <section class="booking-section-wrapper" id="bookingSection">
+      <div class="section-title">
+        <h2>Complete Your Reservation</h2>
+        <p>Your details will update automatically based on your room card choice.</p>
+      </div>
+
+      <form id="bookingForm">
+        <div class="steps-grid">
+          
+          <!-- STEP CARD 1: SELECTION SUMMARY -->
+          <div class="step-card">
+            <div class="step-header">
+              <span class="step-number">1</span>
+              <h3>Selected Room & Group</h3>
+            </div>
+            <div class="step-content">
+              <div class="form-group">
+                <label for="roomSelect"><i class="bi bi-door-open"></i> Selected Room</label>
+                <!-- Hidden dynamic input holding the chosen room name -->
+                <input type="text" id="selectedRoomDisplay" value="Please click a room card above..." readonly required style="background: #1a1b29; color: #60a5fa; font-weight: bold; border: 1px solid #4B4E6D; padding: 12px; border-radius: 6px;">
+                <input type="hidden" id="roomSelect" required>
+              </div>
+
+              <div class="form-group">
+                <label for="playerCount"><i class="bi bi-people"></i> Group Size</label>
+                <select id="playerCount" required>
+                  <option value="2">2 Players (€20/person)</option>
+                  <option value="3">3 Players (€18/person)</option>
+                  <option value="4" selected>4 Players (€16/person)</option>
+                  <option value="5">5 Players (€15/person)</option>
+                  <option value="6">6 Players (€14/person)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP CARD 2: DATE & TIME -->
+          <div class="step-card">
+            <div class="step-header">
+              <span class="step-number">2</span>
+              <h3>Date & Schedule</h3>
+            </div>
+            <div class="step-content">
+              <div class="form-group">
+                <label for="bookingDate"><i class="bi bi-calendar-event"></i> Reservation Date</label>
+                <input type="date" id="bookingDate" required>
+              </div>
+
+              <div class="form-group">
+                <label for="timeSlot"><i class="bi bi-clock"></i> Preferred Slot</label>
+                <select id="timeSlot" required>
+                  <option value="" disabled selected>Select time...</option>
+                  <option value="12:00 PM">12:00 PM</option>
+                  <option value="02:00 PM">02:00 PM</option>
+                  <option value="04:00 PM">04:00 PM</option>
+                  <option value="06:00 PM">06:00 PM</option>
+                  <option value="08:00 PM">08:00 PM</option>
+                  <option value="10:00 PM">10:00 PM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP CARD 3: CONTACT & TOTAL -->
+          <div class="step-card">
+            <div class="step-header">
+              <span class="step-number">3</span>
+              <h3>Contact & Confirm</h3>
+            </div>
+            <div class="step-content">
+              <div class="form-group">
+                <label for="fullName"><i class="bi bi-person"></i> Full Name</label>
+                <input type="text" id="fullName" placeholder="e.g. Alex Smith" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email"><i class="bi bi-envelope"></i> Email Address</label>
+                <input type="email" id="email" placeholder="alex@example.com" required>
+              </div>
+
+              <div class="price-banner">
+                <span>Total Amount:</span>
+                <strong id="totalPrice">€64</strong>
+              </div>
+
+              <button type="submit" class="book-submit-btn">Confirm Reservation</button>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+    <!-- ROOM DETAILS MODAL -->
+    <div id="detailsModal" class="modal">
+      <div class="modal-content modal-large">
+        <button class="modal-close-icon" onclick="closeDetailsModal()">&times;</button>
+        <img id="detailModalImg" src="" alt="Room Preview" class="modal-banner-img">
+        <h2 id="detailModalTitle"></h2>
+        <div id="detailModalMeta" class="modal-meta-tags"></div>
+        <p id="detailModalDesc" class="modal-story-text"></p>
+        <div class="modal-highlights">
+          <h4><i class="bi bi-stars"></i> Experience Highlights</h4>
+          <ul id="detailModalHighlights"></ul>
+        </div>
+        <div class="modal-footer-actions">
+          <button class="cancel-btn" onclick="closeDetailsModal()">Close</button>
+          <button id="modalBookNowBtn" class="confirm-btn">Book This Room</button>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- NAVBAR SCRIPT -->
+    <!-- SUCCESS CONFIRMATION MODAL -->
+    <div id="successModal" class="modal">
+      <div class="modal-content text-center">
+        <i class="bi bi-check-circle-fill success-icon"></i>
+        <h2>Booking Confirmed!</h2>
+        <p id="modalDetails"></p>
+        <button onclick="closeSuccessModal()" class="close-modal-btn" type="button">Done</button>
+      </div>
+    </div>
+
+  </main>
+
   <script src="../Website - js/navbar.js"></script>
-  <!-- BOOKING SCRIPT -->
   <script src="../Website - js/book.js"></script>
 </body>
 </html>

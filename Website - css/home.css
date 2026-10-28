@@ -1,0 +1,301 @@
+* {
+    box-sizing: border-box;
+}
+
+.home-page-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* HERO / WELCOME SECTION */
+.hero-section {
+    background: linear-gradient(135deg, #1a1b29 0%, #2B2D42 100%);
+    border-radius: 16px;
+    padding: 60px 30px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    margin-bottom: 50px;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    margin-bottom: 16px;
+    color: #ffffff;
+}
+
+.hero-subtitle {
+    font-size: 17px;
+    color: #d1d5db;
+    max-width: 720px;
+    margin: 0 auto 32px auto;
+    line-height: 1.6;
+}
+
+.hero-cta-group {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.primary-cta {
+    background-color: #60a5fa;
+    color: #ffffff;
+}
+
+.primary-cta:hover {
+    background-color: #3b82f6;
+}
+
+.secondary-cta {
+    background-color: transparent;
+    color: #60a5fa;
+    border: 2px solid #60a5fa;
+}
+
+.secondary-cta:hover {
+    background-color: #60a5fa;
+    color: #ffffff;
+}
+
+/* SECTION HEADERS */
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-size: 30px;
+    color: #2B2D42;
+    margin-bottom: 6px;
+}
+
+.section-header p {
+    color: #666666;
+    font-size: 15px;
+}
+
+/* ROOMS PREVIEW GRID */
+.products-overview-section {
+    margin-bottom: 50px;
+}
+
+.rooms-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.room-preview-card {
+    background-color: #2B2D42;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-img-box {
+    position: relative;
+    height: 220px;
+    width: 100%;
+}
+
+.preview-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #1a1b29;
+}
+
+.preview-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fbbf24;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.preview-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.preview-body h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.preview-body p {
+    color: #d1d5db;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+
+.preview-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #60a5fa;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.card-link-btn {
+    text-align: center;
+    background-color: #60a5fa;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.card-link-btn:hover {
+    background-color: #3b82f6;
+}
+
+/* FEATURES GRID */
+.features-section {
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.feature-box {
+    background-color: #2B2D42;
+    color: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 38px;
+    color: #60a5fa;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.feature-box h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.feature-box p {
+    color: #d1d5db;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* DARK MODE OVERRIDES */
+body.dark .section-header h2 {
+    color: #ffffff;
+}
+
+body.dark .section-header p {
+    color: #a0aec0;
+}
+
+body.dark .room-preview-card,
+body.dark .feature-box {
+    background-color: #3B3E5B;
+}
+
+/* MOTIVATIONAL QUOTE API WIDGET */
+.quote-api-card {
+    background: linear-gradient(135deg, #1a1b29 0%, #2B2D42 100%);
+    border-left: 5px solid #60a5fa;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.quote-content {
+    position: relative;
+    padding-left: 36px;
+}
+
+.quote-icon {
+    position: absolute;
+    left: 0;
+    top: -5px;
+    font-size: 28px;
+    color: #60a5fa;
+}
+
+.quote-text {
+    font-size: 16px;
+    font-style: italic;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+}
+
+.quote-author {
+    font-size: 13px;
+    color: #60a5fa;
+    font-weight: bold;
+}
+
+.refresh-quote-btn {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #4B4E6D;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.refresh-quote-btn:hover {
+    background-color: #60a5fa;
+    border-color: #60a5fa;
+}
+
+@media (max-width: 600px) {
+    .quote-api-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
