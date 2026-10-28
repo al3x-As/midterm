@@ -10,6 +10,30 @@ body {
   color: #2B2D42;
   
 }
+body.dark {
+    background-color: #2B2D42;
+    color: #EAECEE;
+}
+
+body.dark  h1 {
+    color: #EAECEE;
+}
+
+body.dark  .subtitle {
+    color: #a0aec0;
+}
+
+body.dark .contact-form label,
+body.dark form label {
+    color: #2B2D42;
+    font-weight: bold;
+}
+
+body.dark .contact-details  {
+  color:#2B2D42;
+}
+
+
 
 .contact-container {
   max-width: 1000px;
@@ -34,6 +58,9 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+}
+.contact-details i{
+  color:#2B2D42;
 }
 
 @media (max-width: 768px) {

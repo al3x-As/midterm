@@ -13,6 +13,12 @@ body.dark {
     background-color: #2B2D42;
     color: #EAECEE;
 }
+body.dark .book-button {
+    background-color: white;
+    color: #2B2D42;
+}
+
+
 
 .about-section {
     padding: 20px;
@@ -72,7 +78,7 @@ body.dark .carousel-header h2 {
     gap: 12px;
 }
 
-.nav-arrow-btn {
+.nav-arrow {
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -87,19 +93,19 @@ body.dark .carousel-header h2 {
     transition: all 0.2s ease;
 }
 
-.nav-arrow-btn:hover {
+.nav-arrow:hover {
     background-color: #ffffff;
     color: #2B2D42;
     transform: scale(1.05);
 }
 
-body.dark .nav-arrow-btn {
+body.dark .nav-arrow {
     border-color: #EAECEE;
     background-color: #EAECEE;
     color: #2B2D42;
 }
 
-body.dark .nav-arrow-btn:hover {
+body.dark .nav-arrow:hover {
     background-color: #2B2D42;
     color: #EAECEE;
 }
@@ -162,6 +168,7 @@ body.dark .nav-arrow-btn:hover {
     font-size: 14px;
     line-height: 1.4;
 }
+
 
 
 @media (max-width: 992px) {
