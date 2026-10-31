@@ -5,21 +5,24 @@
   font-family: sans-serif;
 }
 
+/* Page Background Explicitly Defined */
 body {
-  background-color: #EAECEE;
-  color: #2B2D42;
-  
+    background-color: #EAECEE !important;
+    margin: 0;
+    padding: 0;
 }
+
+/* Dark mode support */
 body.dark {
-    background-color: #2B2D42;
+    background-color: #2B2D42 !important;
     color: #EAECEE;
 }
 
-body.dark  h1 {
+body.dark h1 {
     color: #EAECEE;
 }
 
-body.dark  .subtitle {
+body.dark .subtitle {
     color: #a0aec0;
 }
 
@@ -29,16 +32,14 @@ body.dark form label {
     font-weight: bold;
 }
 
-body.dark .contact-details  {
-  color:#2B2D42;
+body.dark .contact-details {
+    color: #2B2D42;
 }
-
-
 
 .contact-container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 40px 20px;
 }
 
 h1 {
@@ -58,9 +59,6 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-}
-.contact-details i{
-  color:#2B2D42;
 }
 
 @media (max-width: 768px) {
@@ -138,7 +136,7 @@ h1 {
 }
 
 .submit-btn:hover {
-  background-color: #2B2D42;
+  background-color: #1a1a1a;
 }
 
 /* Map & Details */
@@ -161,25 +159,25 @@ h1 {
   width: 16px;
 }
 
-/* Social Media Icons */
-.social-links {
+/* Social Links Scoped specifically to Info Card */
+.info-card .social-links {
   margin-top: 24px;
   border-top: 1px solid #eee;
   padding-top: 16px;
 }
 
-.social-links h3 {
+.info-card .social-links h3 {
   font-size: 16px;
   margin-bottom: 12px;
   color: #333;
 }
 
-.social-icons {
+.info-card .contact-social-icons {
   display: flex;
   gap: 12px;
 }
 
-.social-icons a {
+.info-card .contact-social-icons a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -192,7 +190,7 @@ h1 {
   transition: transform 0.2s, background-color 0.2s;
 }
 
-.social-icons a:hover {
+.info-card .contact-social-icons a:hover {
   transform: translateY(-3px);
   background-color: #1a1a1a;
 }

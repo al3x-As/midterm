@@ -1,5 +1,13 @@
 * {
     box-sizing: border-box;
+    
+}
+
+body {
+    background-color: #EAECEE;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 .booking-page-container {

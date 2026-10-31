@@ -1,0 +1,99 @@
+
+.footer {
+    background: #2B2D42;
+    box-shadow: 0 10px 20px #000000;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Footer Headings */
+.footer h3,
+.footer h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.footer h3 {
+    font-size: 20px;
+}
+
+.footer h3 i,
+.footer h5 i {
+    margin-right: 6px;
+}
+
+/* Footer Specific Paragraph Text */
+.footer p,
+.footer p.footer-text {
+    color: #cccccc !important;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.footer p i {
+    margin-right: 6px;
+}
+
+/* Social Media Icons */
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.footer .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background-color: #252830;
+    color: #ffffff;
+    border: 2px solid #3b82f6;
+    border-radius: 50%;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    transform: translateY(-4px);
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+/* Footer Horizontal Divider */
+.footer hr.footer-divider,
+.footer hr {
+    border: 0;
+    border-top: 1px solid #555555;
+    opacity: 1;
+    margin: 16px 0 12px;
+}
+
+/* Copyright Text */
+.footer p.copyright {
+    color: #999999 !important;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+    .footer .social-icons {
+        justify-content: flex-start;
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 767px) {
+    .footer {
+        padding: 20px 10px 10px;
+    }
+}
