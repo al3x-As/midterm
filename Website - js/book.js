@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Prevent selecting past dates
   if (bookingDateInput) {
-    const today = new Date().toISOString().split("T")[0];
+    const today = new Date().toISOString().split("T")[0]; //Gets today's date formatted as YYYY-MM-DD
     bookingDateInput.min = today;
   }
 
@@ -56,14 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (playerCountSelect && totalPriceElement) {
     playerCountSelect.addEventListener("change", (e) => {
       const count = e.target.value;
-      totalPriceElement.textContent = `€${prices[count] || 64}`;
+      totalPriceElement.textContent = `€${prices[count] || 64}`; // ||64 is when the input is empty it set a price
     });
   }
 
   // Submit reservation
   if (bookingForm) {
     bookingForm.addEventListener("submit", (e) => {
-      e.preventDefault();
+      e.preventDefault(); //Prevents the page from reloading on submit
 
       const room = document.querySelector("#roomSelect").value;
       
@@ -125,8 +125,9 @@ function openRoomDetails(roomName) {
   document.querySelector("#detailModalDesc").innerText = data.story;
 
   const highlightsList = document.querySelector("#detailModalHighlights");
-  highlightsList.innerHTML = data.highlights.map(item => `<li>${item}</li>`).join("");
+  highlightsList.innerHTML = data.highlights.map(item => `<li>${item}</li>`).join("");  // convert the highligths (in the room description) into list
 
+  //book button inside modal, closing when selected and automatically select a room from the list
   const bookBtn = document.querySelector("#modalBookNowBtn");
   bookBtn.onclick = () => {
     closeDetailsModal();
@@ -136,11 +137,13 @@ function openRoomDetails(roomName) {
   document.querySelector("#detailsModal").style.display = "flex";
 }
 
+//Closing Modals 
 function closeDetailsModal() {
   const modal = document.querySelector("#detailsModal");
   if (modal) modal.style.display = "none";
 }
 
+//Resetting Modals
 function closeSuccessModal() {
   const successModal = document.querySelector("#successModal");
   const bookingForm = document.querySelector("#bookingForm");

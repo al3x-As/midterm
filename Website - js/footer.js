@@ -1,11 +1,20 @@
-document.addEventListener("DOMContentLoaded", () => {
-  fetch('../components/footer.html')
-    .then(res => res.text())
-    .then(data => {
-      const footerContainer = document.getElementById('footer');
-      if (footerContainer) {
-        footerContainer.innerHTML = data;
+function loadFooter() { 
+  fetch("../components/footer.html")
+    //take raw response and convert to plain text html code
+    .then(function(footertext) {
+      return footertext.text();
+    })
+    //finds the footer and place it on the website
+    .then(function(data) {
+      const footer = document.querySelector("#footer");
+      if (footer) {
+        footer.innerHTML = data;
       }
     })
-    .catch(err => console.error('Error loading footer component:', err));
-});
+    .catch(function(err) {
+      console.error("Error loading footer:", err);
+    });
+}
+
+// Wait for the page structure to load before calling the function
+document.addEventListener("DOMContentLoaded", loadFooter);

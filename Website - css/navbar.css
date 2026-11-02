@@ -155,7 +155,7 @@ body:not(.dark) .dark-lightmode .sun {
         align-items: flex-start;
         gap: 1.7rem;
         position: absolute;
-        height: 50vh;
+        height: 60vh;
         width: 250px;
         top: 80px;
         right: 0;
