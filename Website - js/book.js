@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Select room when clicking anywhere on a room card
-function chooseRoom(roomName) {
+function chooseRoom(roomName) { //sets everything to roomName so the chosen room is displayed in the booking form
   const roomSelectInput = document.querySelector("#roomSelect");
   const roomSelectDisplay = document.querySelector("#selectedRoomDisplay");
 
@@ -101,7 +101,7 @@ function chooseRoom(roomName) {
   const cards = document.querySelectorAll(".room-card");
   cards.forEach((card) => {
     if (card.getAttribute("data-room") === roomName) {
-      card.classList.add("selected-card");
+      card.classList.add("selected-card"); //add css to highlight the choosen room card
     } else {
       card.classList.remove("selected-card");
     }

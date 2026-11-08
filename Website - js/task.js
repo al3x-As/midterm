@@ -1,15 +1,7 @@
 const STORAGE_KEY = "lockbox_employee_tasks";  //save and store all the task in the browser
 const getToday = () => new Date().toISOString().split("T")[0]; //gets today's date
 
-// Default starter tasks
-const defaultEmployeeTasks = [
-  { id: 101, name: "Clean rooms before first reservation", desc: "Sanitize props, sweep floor, and wipe glass surfaces in Haunted Lab & Ancient Tomb.", dueDate: getToday(), priority: "High", status: "To Do" },
-  { id: 102, name: "Make sure all room puzzles work", desc: "Test electronic locks, keypad codes, and celestial mirror alignment sensors.", dueDate: getToday(), priority: "High", status: "In Progress" },
-  { id: 103, name: "Refill smoke machine fluid", desc: "Check smoke fluid level in Haunted Lab fogger and refill if under 25%.", dueDate: getToday(), priority: "Medium", status: "To Do" },
-  { id: 104, name: "Reset Bank Heist laser maze", desc: "Align laser emitters and verify alarm trigger sensor responses.", dueDate: getToday(), priority: "Medium", status: "Completed" }
-];
-
-let tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || defaultEmployeeTasks; //look for saved task in storege key or in defaultEmployeeTasks
+let tasks = JSON.parse(localStorage.getItem(STORAGE_KEY)) ; //look for saved task in storege key 
 let statusChart = null, priorityChart = null; //Empty variables ready to hold your Chart.js graph objects
 
 // Initialize on load
@@ -20,7 +12,7 @@ function saveTasks() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks)); //takes the array of tasks, turns it into a text string and saves it into the browser's memory
 }
 
-function renderAll() { //saves the latest data and refreshes all 4 dashboard sections
+function renderAll() { //saves the latest data and refreshes/ render all 4 dashboard sections
   saveTasks(); 
   const filtered = getFilteredTasks();
   renderTable(filtered);
@@ -126,7 +118,7 @@ function getActionBtns(id) {
 // Drag & Drop, allows to move tasks
 const allowDrop = (e) => e.preventDefault();
 
-//drage the task, changes it status automatically
+//drag the task, changes it status automatically
 function handleDrop(e, newStatus) {
   e.preventDefault();
   const id = parseInt(e.dataTransfer.getData("text/plain"));
