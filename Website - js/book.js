@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Update total price when player count changes
   if (playerCountSelect && totalPriceElement) {
     playerCountSelect.addEventListener("change", (e) => {
-      const count = e.target.value;
+      const count = e.target.value;  //save the selected value
       totalPriceElement.textContent = `€${prices[count] || 64}`; // ||64 is when the input is empty it set a price
     });
   }

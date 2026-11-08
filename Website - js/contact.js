@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Validate Subject
-    if (subject.value.trim() === "") {
+    if (subject.value.trim() === "") {  //wipe out any extra spaces from edges and check if nothing left
       setError(subject, "#subjectError", "Subject is required.");
       isValid = false;
     }

@@ -4,8 +4,7 @@ function scrollCarousel(distance) {
   const track = document.querySelector('.card-container');
   
   // Checks if the element was actually found on the page to prevent errors
-  if (track) {
-    
+  if (track) {    
     // Scrolls the element horizontally by the specified pixel distance
     track.scrollBy({
       left: distance,     
